@@ -1,6 +1,7 @@
-package app;
+package app.customer;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CustomerRepository {
 
@@ -16,6 +17,12 @@ public class CustomerRepository {
                 return customer;
             }
         }
-        return null;
+        return addCustomer(name);
+    }
+
+    private Customer addCustomer(String name) {
+        Customer customer = new Customer(name, new HashMap<>());
+        customers.add(customer);
+        return customer;
     }
 }
